@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\AdminController;
+use App\Http\Controllers\KamarController;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,3 +18,12 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+route::get('/dashboard',[AdminController::class,'index'])->name('dashboard');
+
+route::get('/kamar',[KamarController::class,'index'])->name('kamar');
+route::get('/kamar/create',[KamarController::class,'create']);
+route::post('/kamar',[KamarController::class,'store']);
+route::get('/kamar/{id}/edit',[KamarController::class,'edit']);
+route::post('/kamar/{id}',[KamarController::class,'update']);
+route::get('/kamar/{id}',[KamarController::class,'destroy']);

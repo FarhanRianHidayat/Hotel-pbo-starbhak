@@ -3,6 +3,8 @@
 namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+
+use App\Models\Kamar;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -20,5 +22,18 @@ class DatabaseSeeder extends Seeder
         //     'name' => 'Test User',
         //     'email' => 'test@example.com',
         // ]);
+
+        Kamar::create([
+            'no_kamar' => '01',
+            'harga' => '$150',
+            'kapasitas' => '3',
+            'lantai' => '2',
+        ]);
+        Kamar::create([
+            'no_kamar' => '02',
+            'harga' => '$120',
+            'kapasitas' => '2',
+            'lantai' => '1',
+        ]);
     }
 }
