@@ -24,7 +24,7 @@ class KamarController extends Controller
             'no_kamar' => ['required'],
             'harga' => ['required'],
             'kapasitas' => ['required'],
-            'lantai' => ['required']
+            'tipe' => ['required']
         ]);
 
         Kamar::create($validasi);
@@ -43,7 +43,7 @@ class KamarController extends Controller
             'no_kamar' => ['required'],
             'harga' => ['required'],
             'kapasitas' => ['required'],
-            'lantai' => ['required']
+            'tipe' => ['required']
         ]);
 
         Kamar::where('id',$id)->update($validasi);

@@ -27,13 +27,13 @@ class DatabaseSeeder extends Seeder
             'no_kamar' => '01',
             'harga' => '$150',
             'kapasitas' => '3',
-            'lantai' => '2',
+            'tipe' => 'Superior',
         ]);
         Kamar::create([
             'no_kamar' => '02',
             'harga' => '$120',
             'kapasitas' => '2',
-            'lantai' => '1',
+            'tipe' => 'Deluxe',
         ]);
     }
 }

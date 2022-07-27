@@ -13,12 +13,11 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('kamar', function (Blueprint $table) {
+        Schema::create('fasilitas_umum', function (Blueprint $table) {
             $table->id();
-            $table->string("no_kamar");
-            $table->string("harga");
-            $table->string("kapasitas");
-            $table->enum('tipe',['Superior','Deluxe']);
+            $table->string('nama');
+            $table->string('keterangan');
+            $table->string('image');
             $table->timestamps();
         });
     }
@@ -30,6 +29,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('kamar');
+        Schema::dropIfExists('fasilitas_umum');
     }
 };

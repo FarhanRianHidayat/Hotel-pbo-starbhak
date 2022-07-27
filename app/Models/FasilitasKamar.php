@@ -5,14 +5,14 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Kamar extends Model
+class FasilitasKamar extends Model
 {
     use HasFactory;
 
-    protected $table = 'kamar';
+    protected $table = 'fasilitas_kamar';
     protected $guarded = [''];
 
     protected function kamar(){
-        return $this->hasMany(FasilitasKamar::class);
+        return $this->belongsTo(kamar::class);
     }
 }

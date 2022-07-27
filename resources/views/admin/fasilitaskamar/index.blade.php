@@ -8,7 +8,7 @@
         </div>
         <div class="card-body">
             <p class="card-description">
-                <a href="/kamar/create" class="btn btn-primary btn-sm float-right rounded-3">Tambah Data</a>
+                <a href="/fasilitaskamar/create" class="btn btn-primary btn-sm float-right rounded-3">Tambah Data</a>
             </p>
             <div class="table-responsive">
                 <table class="table table-striped">
@@ -16,23 +16,21 @@
                         <tr>
                             <th>#</th>
                             <th>No Kamar</th>
-                            <th>Harga</th>
-                            <th>Kapasitas</th>
                             <th>Tipe Kamar</th>
+                            <th>Fasilitas</th>
                             <th>Action</th>
                         </tr>
                     </thead>
                     <tbody>
-                        @foreach ($kamar as $kamars)
+                        @foreach ($data as $row)
                         <tr>
                             <td>{{ $loop->iteration }}</td>
-                            <td>{{ $kamars->no_kamar }}</td>
-                            <td>{{ $kamars->harga }}</td>
-                            <td>{{ $kamars->kapasitas }}</td>
-                            <td>{{ $kamars->tipe }}</td>
+                            <td>{{ $row->kamar->no_kamar }}</td>
+                            <td>{{ $row->kamar->tipe }}</td>
+                            <td>{{ $row->nama }}</td>
                             <td>
-                                <a href="/kamar/{{ $kamars->id }}/edit" class="btn btn-warning btn-sm text-white">Edit</a>
-                                <a href="/kamar/{{ $kamars->id }}" class="btn btn-danger btn-sm">Delete</a>
+                                <a href="/fasilitaskamar/{{ $row->id }}/edit" class="btn btn-warning btn-sm text-white">Edit</a>
+                                <a href="/fasilitaskamar/{{ $row->id }}" class="btn btn-danger btn-sm">Delete</a>
                             </td>
                         </tr>
                         @endforeach
