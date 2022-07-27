@@ -125,7 +125,7 @@
                                 <li class="nav-item"> <a class="nav-link" href="/fasilitaskamar">Fasilitas Kamar</a></li>
                             </ul>
                             <ul class="nav flex-column sub-menu">
-                                <li class="nav-item"> <a class="nav-link" href="/mapel">Fasilitas Umum</a></li>
+                                <li class="nav-item"> <a class="nav-link" href="/fasilitasumum">Fasilitas Umum</a></li>
                             </ul>
                         </div>
                     </li>

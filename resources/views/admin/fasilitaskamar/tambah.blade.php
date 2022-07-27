@@ -20,7 +20,7 @@
                 <div class="form-group">
                     <label for="2">Fasilitas</label>
                     <textarea class="form-control" id="2" rows="4" name="nama"></textarea>
-                  </div>
+                </div>
                 <button type="submit" class="btn btn-primary mr-2">Submit</button>
                 <a href="/fasilitaskamar" class="btn btn-light">Cancel</a>
             </form>

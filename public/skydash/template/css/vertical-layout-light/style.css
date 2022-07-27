@@ -116,6 +116,9 @@
 /* === Import template variables === */
 /*-------------------------------------------------------------------*/
 /* === SCSS Compass Functions === */
+
+
+
 @-moz-keyframes flash {
   0% {
     opacity: 1;
@@ -24629,9 +24632,9 @@ dl li {
 }
 
 .table td img, .jsgrid .jsgrid-table td img {
-  width: 36px;
-  height: 36px;
-  border-radius: 100%;
+  width: 100px;
+  height: 50px;
+  /* border-radius: 100%; */
 }
 
 .table td .badge, .jsgrid .jsgrid-table td .badge {
@@ -30586,10 +30589,14 @@ div.tagsinput span.tag a {
   left: 30px;
 }
 
+
+
+
 @media (max-width: 991px) {
   #settings-trigger {
     display: none;
   }
 }
+
 
 /*# sourceMappingURL=../maps/vertical-layout-light/style.css.map */

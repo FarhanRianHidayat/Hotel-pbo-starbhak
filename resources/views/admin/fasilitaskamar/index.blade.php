@@ -4,7 +4,7 @@
 <div class="col-lg-12 grid-margin stretch-card">
     <div class="card shadow">
         <div class="card-header">
-            <h4 class="card-title m-0 font-weight-bold text-primary">Data Kamar</h4>
+            <h4 class="card-title m-0 font-weight-bold text-primary">Data Fasilitas Kamar</h4>
         </div>
         <div class="card-body">
             <p class="card-description">
