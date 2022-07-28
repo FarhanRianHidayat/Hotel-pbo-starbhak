@@ -1,0 +1,16 @@
+*{
+    /* font-family: 'Poppins', sans-serif; */
+    margin: 0;
+    padding: 0;
+}
+
+/* .kamar1{
+    background-color: salmon;
+    width: 500px;
+    height: 500px;
+} */
+
+.kamar1{
+    background: salmon;
+    height: 300px;
+}

@@ -23,6 +23,7 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
     {{-- <link
         href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
         rel="stylesheet">
@@ -48,23 +49,22 @@
                 <button class="navbar-toggler navbar-toggler align-self-center" type="button" data-toggle="minimize">
                     <span class="icon-menu"></span>
                 </button>
-
                 <ul class="navbar-nav navbar-nav-right">
-
                     <li class="nav-item nav-profile dropdown">
+                        <span class="mr-2 d-none d-lg-inline text-gray-600 small">{{ auth()->user()->username }}</span>
                         <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" id="profileDropdown">
-                            <img src="/skydash/template/images/faces/face28.jpg" alt="profile" />
+                            <img src="/skydash/template/images/faces/face2.jpg" alt="profile" />
                         </a>
                         <div class="dropdown-menu dropdown-menu-right navbar-dropdown"
                             aria-labelledby="profileDropdown">
-                            <a class="dropdown-item">
-                                <i class="ti-settings text-primary"></i>
-                                Settings
+                            <a class="dropdown-item m-0" href="/">
+                                <i class="bi bi-box-arrow-left text-primary"></i>
+                                Home
                             </a>
-                            <a class="dropdown-item">
-                                <i class="ti-power-off text-primary"></i>
-                                Logout
-                            </a>
+                            <form action="/logout" method="post" class="m-0">
+                                @csrf
+                                <button type="submit" class="dropdown-item m-0"><i class="ti-power-off text-primary"></i>Logout</button>
+                            </form>
                         </div>
                     </li>
                 </ul>

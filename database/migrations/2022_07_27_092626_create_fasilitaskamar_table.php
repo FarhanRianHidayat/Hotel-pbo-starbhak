@@ -17,6 +17,7 @@ return new class extends Migration
             $table->id();
             $table->foreignId('kamar_id');
             $table->string('nama');
+            $table->string('image');
             $table->timestamps();
         });
     }

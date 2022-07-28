@@ -19,6 +19,7 @@ return new class extends Migration
             $table->string("harga");
             $table->string("kapasitas");
             $table->enum('tipe',['Superior','Deluxe']);
+            // $table->string('image');
             $table->timestamps();
         });
     }

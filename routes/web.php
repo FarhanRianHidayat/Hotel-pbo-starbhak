@@ -1,8 +1,11 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\AppController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\KamarController;
+use App\Http\Controllers\LoginController;
+use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\FasilitasUmumController;
 use App\Http\Controllers\FasilitasKamarController;
 
@@ -17,8 +20,9 @@ use App\Http\Controllers\FasilitasKamarController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+
+route::get('/fasilitas', function(){
+    dd('oke');
 });
 
 route::get('/dashboard',[AdminController::class,'index'])->name('dashboard');
@@ -43,3 +47,14 @@ route::post('/fasilitasumum',[FasilitasUmumController::class,'store']);
 route::get('/fasilitasumum/{id}/edit',[FasilitasUmumController::class,'edit']);
 route::post('/fasilitasumum/{id}',[FasilitasUmumController::class,'update']);
 route::get('/fasilitasumum/{id}',[FasilitasUmumController::class,'destroy']);
+
+
+route::get('/login',[LoginController::class,'index'])->name('login')->middleware('guest');
+route::post('/login',[LoginController::class,'authenticate']);
+route::post('/logout',[LoginController::class,'logout']);
+
+route::get('/registrasi',[RegisterController::class,'index'])->name('registrasi');
+route::post('/registrasi',[RegisterController::class,'store']);
+
+route::get('/',[AppController::class,'home'])->name('home');
+route::get('/tipekamar',[AppController::class,'kamar']);

@@ -22,8 +22,11 @@
                     <input type="text" class="form-control" id="3" placeholder="Kapasitas" name="kapasitas" value="{{ $kamar->kapasitas }}">
                 </div>
                 <div class="form-group">
-                    <label for="4">Lantai</label>
-                    <input type="text" class="form-control" id="4" placeholder="Lantai" name="lantai" value="{{ $kamar->lantai }}">
+                    <label for="4">Tipe Kamar</label>
+                    <select class="form-control" id="4" name="tipe" >
+                        <option value="1">Superior</option>
+                        <option value="2">Deluxe</option>
+                    </select>
                 </div>
                 <button type="submit" class="btn btn-primary mr-2">Submit</button>
                 <a href="/kamar" class="btn btn-light">Cancel</a>
