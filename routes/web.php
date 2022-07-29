@@ -21,9 +21,7 @@ use App\Http\Controllers\FasilitasKamarController;
 */
 
 
-route::get('/fasilitas', function(){
-    dd('oke');
-});
+
 
 route::get('/dashboard',[AdminController::class,'index'])->name('dashboard');
 
@@ -58,3 +56,4 @@ route::post('/registrasi',[RegisterController::class,'store']);
 
 route::get('/',[AppController::class,'home'])->name('home');
 route::get('/tipekamar',[AppController::class,'kamar']);
+route::get('fasilitas',[AppController::class,'fasilitas']);
