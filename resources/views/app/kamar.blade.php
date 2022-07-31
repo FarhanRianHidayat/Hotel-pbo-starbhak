@@ -4,24 +4,24 @@
 <div class="container-fluid">
         <div class="container">
             <!-- awal -->
-            <div class="row">
+            {{-- <div class="row">
                 <div class="col-6">
                     <h1>SKY HOTEL</h1>
                 </div>
-            </div>
+            </div> --}}
 
             <div class="row py-2">
                 <div class="col-12">
-                    <img src="img/hotel.jpg" class="sampul" alt="">
+                    <img src="img/coba2.jpg" class="sampul" alt="" style="object-fit: cover">
                 </div>
             </div>
 
-            <div class="row py-4">
-                <div class="col-12">
+            <div class="row py-1">
+                <div class="col-md-12">
                     <h2>Tipe Superior</h2>
                 </div>
             </div>
-            <div class="text">
+            <div class="text ms-1 mb-3">
                 <p>
                     Fasilitas:
                     <br>
@@ -38,15 +38,15 @@
             </div>
             <div class="row py-2">
                 <div class="col-12">
-                    <img src="asset/hotel.jpg" class="image img-fluid" alt="">
+                    <img src="img/coba3.jpg" class="sampul" alt="" style="object-fit: cover">
                 </div>
             </div>
-            <div class="row py-4">
-                <div class="col-12">
+            <div class="row py-1">
+                <div class="col-md-12">
                     <h2>Tipe Deluxe</h2>
                 </div>
             </div>
-            <div class="text">
+            <div class="text ms-1 mb-3">
                 <p>
                     Fasilitas:
                     <br>

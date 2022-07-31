@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\FasilitasUmum;
 use Illuminate\Http\Request;
 
 class AppController extends Controller
@@ -16,6 +17,8 @@ class AppController extends Controller
 
     public function fasilitas(){
         
-        return view('app.fasilitas');
+        return view('app.fasilitas',[
+            'data' => FasilitasUmum::all()
+        ]);
     }
 }
