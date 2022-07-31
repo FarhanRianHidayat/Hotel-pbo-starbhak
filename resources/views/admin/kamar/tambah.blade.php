@@ -7,7 +7,7 @@
             <h4 class="card-title m-0 font-weight-bold text-primary">Tambah Data Kamar</h4>
         </div>
         <div class="card-body">
-            <form class="forms-sample" action="/kamar" method="POST">
+            <form class="forms-sample" action="/kamar" method="POST" enctype="multipart/form-data">
                 @csrf
                 <div class="form-group">
                     <label for="1">Nomor Kamar</label>
@@ -27,6 +27,10 @@
                         <option value="1">Superior</option>
                         <option value="2">Deluxe</option>
                     </select>
+                </div>
+                <div class="form-group">
+                    <label for="5" class="form-label">Foto</label>
+                    <input class="form-control" type="file" id="5" name="image">
                 </div>
                 <button type="submit" class="btn btn-primary mr-2">Submit</button>
                 <a href="/kamar" class="btn btn-light">Cancel</a>

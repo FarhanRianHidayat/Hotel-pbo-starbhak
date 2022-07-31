@@ -4,20 +4,22 @@
 <div class="col-lg-12 grid-margin stretch-card">
     <div class="card shadow">
         <div class="card-header">
-            <h4 class="card-title m-0 font-weight-bold text-primary">Data Fasilitas Umum</h4>
+            <h4 class="card-title m-0 font-weight-bold text-primary">Data Pemesanan</h4>
         </div>
         <div class="card-body">
             <p class="card-description">
-                <a href="/fasilitasumum/create" class="btn btn-primary btn-sm float-right rounded-3">Tambah Data</a>
+                <a href="/resepsionis/create" class="btn btn-primary btn-sm float-right rounded-3">Tambah Data</a>
             </p>
             <div class="table-responsive">
                 <table class="table table-striped">
                     <thead>
                         <tr>
                             <th>#</th>
-                            <th>Fasilitas</th>
-                            <th>Keterangan</th>
-                            <th>Foto</th>
+                            <th>Nama Tamu</th>
+                            <th>No Kamar</th>
+                            <th>Tipe Kamar</th>
+                            <th>Tanggal Cek In</th>
+                            <th>Tanggal Cek Out</th>
                             <th>Action</th>
                         </tr>
                     </thead>
@@ -25,12 +27,14 @@
                         @foreach ($data as $row)
                         <tr>
                             <td>{{ $loop->iteration }}</td>
-                            <td>{{ $row->nama }}</td>
-                            <td>{{ $row->keterangan }}</td>
-                            <td><img src="{{ asset('storage/'. $row->image) }}" alt="" class="img-fluid rounded-0"></td>
+                            <td>{{ $row->nama_tamu }}</td>
+                            <td>{{ $row->kamar->no_kamar }}</td>
+                            <td>{{ $row->kamar->tipe }}</td>
+                            <td>{{ $row->check_in }}</td>
+                            <td>{{ $row->check_out }}</td>
                             <td>
-                                <a href="/fasilitasumum/{{ $row->id }}/edit" class="btn btn-warning btn-sm text-white">Edit</a>
-                                <a href="/fasilitasumum/{{ $row->id }}" class="btn btn-danger btn-sm">Delete</a>
+                                <a href="/resepsionis/{{ $row->id }}/edit" class="btn btn-warning btn-sm text-white">Edit</a>
+                                <a href="/resepsionis/{{ $row->id }}" class="btn btn-danger btn-sm" onclick="return confirm('Apa kamu ingin menghapus data ini?')">Delete</a>
                             </td>
                         </tr>
                         @endforeach

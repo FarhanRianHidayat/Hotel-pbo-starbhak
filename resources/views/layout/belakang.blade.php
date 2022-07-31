@@ -104,6 +104,8 @@
             <!-- partial:partials/_sidebar.html -->
             <nav class="sidebar sidebar-offcanvas" id="sidebar">
                 <ul class="nav">
+                    @can('admin')
+                        
                     <li class="nav-item">
                         <a class="nav-link" href="/dashboard">
                             <i class="icon-grid menu-icon"></i>
@@ -130,9 +132,16 @@
                         </div>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/">
-                            <i class="icon-grid menu-icon"></i>
+                        <a class="nav-link" href="/user">
+                            <i class="icon-head menu-icon"></i>
                             <span class="menu-title">Registrasi</span>
+                        </a>
+                    </li>
+                    @endcan
+                    <li class="nav-item">
+                        <a class="nav-link" href="/resepsionis">
+                            <i class="icon-head menu-icon"></i>
+                            <span class="menu-title">Pemesanan</span>
                         </a>
                     </li>
                 </ul>

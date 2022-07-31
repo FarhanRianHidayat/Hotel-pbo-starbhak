@@ -4,20 +4,22 @@
 <div class="col-lg-12 grid-margin stretch-card">
     <div class="card shadow">
         <div class="card-header">
-            <h4 class="card-title m-0 font-weight-bold text-primary">Data Fasilitas Umum</h4>
+            <h4 class="card-title m-0 font-weight-bold text-primary">Data User</h4>
         </div>
         <div class="card-body">
             <p class="card-description">
-                <a href="/fasilitasumum/create" class="btn btn-primary btn-sm float-right rounded-3">Tambah Data</a>
+                <a href="/user/create" class="btn btn-primary btn-sm float-right rounded-3">Tambah Data</a>
             </p>
             <div class="table-responsive">
                 <table class="table table-striped">
                     <thead>
                         <tr>
                             <th>#</th>
-                            <th>Fasilitas</th>
-                            <th>Keterangan</th>
-                            <th>Foto</th>
+                            <th>Nama</th>
+                            <th>Role</th>
+                            <th>Username</th>
+                            <th>Email</th>
+                            <th>Password</th>
                             <th>Action</th>
                         </tr>
                     </thead>
@@ -25,12 +27,14 @@
                         @foreach ($data as $row)
                         <tr>
                             <td>{{ $loop->iteration }}</td>
-                            <td>{{ $row->nama }}</td>
-                            <td>{{ $row->keterangan }}</td>
-                            <td><img src="{{ asset('storage/'. $row->image) }}" alt="" class="img-fluid rounded-0"></td>
+                            <td>{{ $row->name }}</td>
+                            <td>{{ $row->role }}</td>
+                            <td>{{ $row->username }}</td>
+                            <td>{{ $row->email }}</td>
+                            <td>{{ $row->password }}</td>
                             <td>
-                                <a href="/fasilitasumum/{{ $row->id }}/edit" class="btn btn-warning btn-sm text-white">Edit</a>
-                                <a href="/fasilitasumum/{{ $row->id }}" class="btn btn-danger btn-sm">Delete</a>
+                                <a href="/user/{{ $row->id }}/edit" class="btn btn-warning btn-sm text-white">Edit</a>
+                                <a href="/user/{{ $row->id }}" class="btn btn-danger btn-sm">Delete</a>
                             </td>
                         </tr>
                         @endforeach

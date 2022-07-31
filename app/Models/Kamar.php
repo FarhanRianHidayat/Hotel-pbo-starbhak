@@ -2,8 +2,10 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
+use App\Models\Pemesanan;
+use App\Models\FasilitasKamar;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class Kamar extends Model
 {
@@ -14,5 +16,9 @@ class Kamar extends Model
 
     protected function kamar(){
         return $this->hasMany(FasilitasKamar::class);
+    }
+
+    protected function pemesanan(){
+        return $this->hasMany(Pemesanan::class);
     }
 }

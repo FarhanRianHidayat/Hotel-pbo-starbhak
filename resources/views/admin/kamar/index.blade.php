@@ -19,6 +19,7 @@
                             <th>Harga</th>
                             <th>Kapasitas</th>
                             <th>Tipe Kamar</th>
+                            <th>Foto</th>
                             <th>Action</th>
                         </tr>
                     </thead>
@@ -30,9 +31,10 @@
                             <td>{{ $kamars->harga }}</td>
                             <td>{{ $kamars->kapasitas }}</td>
                             <td>{{ $kamars->tipe }}</td>
+                            <td><img src="{{ asset('storage/' . $kamars->image) }}" alt="" class="img-fluid"></td>
                             <td>
                                 <a href="/kamar/{{ $kamars->id }}/edit" class="btn btn-warning btn-sm text-white">Edit</a>
-                                <a href="/kamar/{{ $kamars->id }}" class="btn btn-danger btn-sm">Delete</a>
+                                <a href="/kamar/{{ $kamars->id }}" class="btn btn-danger btn-sm" onclick="return confirm('Apa kamu ingin menghapus data ini?')">Delete</a>
                             </td>
                         </tr>
                         @endforeach

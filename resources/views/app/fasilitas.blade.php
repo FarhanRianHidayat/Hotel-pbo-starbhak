@@ -12,7 +12,7 @@
 
             <div class="row py-2">
                 <div class="col-12">
-                    <img src="asset/hotel.jpg" class="img" alt="">
+                    <img src="img/hotel.jpg" class="sampul" alt="">
                 </div>
             </div>
 
@@ -24,13 +24,13 @@
 
             <div class="row pb-5">
                 <div class="col-4">
-                    <img src="asset/fasilitas1.jpg" class="image" alt="">
+                    <img src="asset/fasilitas1.jpg" class="fotofasilitas" alt="">
                 </div>
                 <div class="col-4">
-                    <img src="asset/fasilitas2.jpg" class="image" alt="">
+                    <img src="asset/fasilitas2.jpg" class="fotofasilitas" alt="">
                 </div>
                 <div class="col-4">
-                    <img src="asset/fasilitas3.jpg" class="image" alt="">
+                    <img src="asset/fasilitas3.jpg" class="fotofasilitas" alt="">
                 </div>
             </div>
         </div>

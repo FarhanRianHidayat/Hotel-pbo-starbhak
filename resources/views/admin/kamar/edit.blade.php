@@ -7,7 +7,7 @@
             <h4 class="card-title m-0 font-weight-bold text-primary">Tambah Data Kamar</h4>
         </div>
         <div class="card-body">
-            <form class="forms-sample" action="/kamar/{{ $kamar->id }}" method="POST">
+            <form class="forms-sample" action="/kamar/{{ $kamar->id }}" method="POST" enctype="multipart/form-data">
                 @csrf
                 <div class="form-group">
                     <label for="1">Nomor Kamar</label>
@@ -28,6 +28,11 @@
                         <option value="2">Deluxe</option>
                     </select>
                 </div>
+                <div class="form-group">
+                    <label for="5" class="form-label">Foto</label>
+                    <input class="form-control" type="file" id="5" name="image">
+                </div>
+                <input type="hidden" name="poto" value="{{ $kamar->image }}">
                 <button type="submit" class="btn btn-primary mr-2">Submit</button>
                 <a href="/kamar" class="btn btn-light">Cancel</a>
             </form>

@@ -4,27 +4,20 @@
     padding: 0;
 }
 
-/* .kamar1{
-    background-color: salmon;
-    width: 500px;
-    height: 500px;
-} */
-
+.sampul{
+    width: 100%;
+    height: 380px;
+}
 .kamar1{
     background: salmon;
     height: 300px;
-}
-
-.row .img {
-    width: 100%;
-    height: 380px;
 }
 
 .icon {
     width: 8%;
 }
 
-.row .image {
+.fotofasilitas{
     width: 100%;
     height: 200px;
 }

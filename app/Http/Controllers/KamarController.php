@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Kamar;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Http\Request;
 
 class KamarController extends Controller
@@ -24,8 +25,13 @@ class KamarController extends Controller
             'no_kamar' => ['required'],
             'harga' => ['required'],
             'kapasitas' => ['required'],
-            'tipe' => ['required']
+            'tipe' => ['required'],
+            'image' => ['required']
         ]);
+
+        if($request->file('image')){
+            $validasi['image'] = $request->file('image')->store('data-image');
+        }
 
         Kamar::create($validasi);
 
@@ -43,8 +49,16 @@ class KamarController extends Controller
             'no_kamar' => ['required'],
             'harga' => ['required'],
             'kapasitas' => ['required'],
-            'tipe' => ['required']
+            'tipe' => ['required'],
+            'image' => ['required']
         ]);
+
+        if($request->file('image')){
+            if($request->poto){
+                Storage::delete($request->poto);
+            }
+            $validasi['image'] = $request->file('image')->store('data-image');
+        }
 
         Kamar::where('id',$id)->update($validasi);
 
@@ -52,6 +66,12 @@ class KamarController extends Controller
     }
 
     public function destroy($id){
+
+        $post = Kamar::find($id);
+        if($post->image){
+            Storage::delete($post->image);
+        }
+
         $data = Kamar::find($id);
         $data->delete();
 

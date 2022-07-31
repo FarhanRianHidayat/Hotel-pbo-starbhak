@@ -13,7 +13,7 @@
 
             <div class="row py-2">
                 <div class="col-12">
-                    <img src="asset/hotel.jpg" class="img" alt="">
+                    <img src="img/hotel.jpg" class="sampul" alt="">
                 </div>
             </div>
 

@@ -27,19 +27,18 @@ class FasilitasUmumController extends Controller
             'image' => ['required']
         ]);
 
-        $data = FasilitasUmum::create($validasi);
+        // $data = FasilitasUmum::create($validasi);
 
-        if($request->hasFile('image')){
-            $request->file('image')->move('fasilitas/',$request->file('image')->getClientOriginalName());
-            $data->image = $request->file('image')->getClientOriginalName();
-            $data->save();
+        // if($request->hasFile('image')){
+        //     $request->file('image')->move('fasilitas/',$request->file('image')->getClientOriginalName());
+        //     $data->image = $request->file('image')->getClientOriginalName();
+        //     $data->save();
+        // }
+        if($request->file('image')){
+            $validasi['image'] = $request->file('image')->store('data-image');
         }
 
-        // if($request->file('image')){
-        //     $validasi['image'] = $request->file('image')->store('Fasilias');
-        // }
-
-        // FasilitasUmum::create($validasi);
+        FasilitasUmum::create($validasi);
 
         return redirect()->route('fasilitasumum')->with('success','Data berhasil di Tambah!');
     }
@@ -58,15 +57,14 @@ class FasilitasUmumController extends Controller
             'image' => ['required']
         ]);
 
-        $data = FasilitasUmum::find($id);
-        $data->update($request->all());
-        
-        if($request->hasFile('image')){
-            $request->file('image')->move('fasilitas/',$request->file('image')->getClientOriginalName());
-            $data->image = $request->file('image')->getClientOriginalName();
-            $data->save();
+        if($request->file('image')){
+            if($request->poto){
+                Storage::delete($request->poto);
+            }
+            $validasi['image'] = $request->file('image')->store('data-image');
         }
-        // $data = FasilitasUmum::where('id',$id)->update($validasi);
+
+        FasilitasUmum::where('id',$id)->update($validasi);
         // if($request->hasFile('image')){
         //     $request->file('image')->move('fasilitas/',$request->file('image')->getClientOriginalName());
         //     $data->image = $request->file('image')->getClientOriginalName();
@@ -77,6 +75,12 @@ class FasilitasUmumController extends Controller
     }
 
     public function destroy($id){
+
+        $post = FasilitasUmum::find($id);
+        if($post->image){
+            Storage::delete($post->image);
+        }
+
         $data = FasilitasUmum::find($id);
         $data->delete();
 

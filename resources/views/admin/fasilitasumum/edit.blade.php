@@ -20,7 +20,8 @@
                 <div class="form-group">
                     <label for="3" class="form-label">Foto</label>
                     <input class="form-control" type="file" id="3" name="image">
-                  </div>
+                    <input type="hidden" name="poto" value="{{ $data->image }}">
+                </div>
                 <button type="submit" class="btn btn-primary mr-2">Submit</button>
                 <a href="/fasilitasumum" class="btn btn-light">Cancel</a>
             </form>
