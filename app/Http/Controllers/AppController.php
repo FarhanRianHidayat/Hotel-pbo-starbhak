@@ -3,22 +3,29 @@
 namespace App\Http\Controllers;
 
 use App\Models\FasilitasUmum;
+use App\Models\Pemesanan;
 use Illuminate\Http\Request;
 
 class AppController extends Controller
 {
     public function home(){
-        return view('app.home');
+        return view('page.home');
     }
     
     public function kamar(){
-        return view('app.kamar');
+        return view('page.kamar');
     }
 
     public function fasilitas(){
         
-        return view('app.fasilitas',[
+        return view('page.fasilitas',[
             'data' => FasilitasUmum::all()
+        ]);
+    }
+
+    public function reservasi(){
+        return view('page.reservasi',[
+            'data' => Pemesanan::all()
         ]);
     }
 }

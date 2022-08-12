@@ -25,7 +25,8 @@ use App\Http\Controllers\FasilitasKamarController;
 
 route::get('/',[AppController::class,'home'])->name('home');
 route::get('/tipekamar',[AppController::class,'kamar']);
-route::get('fasilitas', [AppController::class, 'fasilitas']);
+route::get('/fasilitas', [AppController::class, 'fasilitas']);
+route::get('/reservasi', [AppController::class, 'reservasi']);
 
 route::get('/dashboard',[AdminController::class,'index'])->name('dashboard');
 
