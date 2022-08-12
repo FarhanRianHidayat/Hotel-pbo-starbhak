@@ -18,7 +18,7 @@
 
             <div class="row py-1">
                 <div class="col-md-12">
-                    <h2>Tipe Superior</h2>
+                    <h2>Tipe Superioor</h2>
                 </div>
             </div>
             <div class="text ms-1 mb-3">
