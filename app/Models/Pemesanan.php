@@ -9,10 +9,6 @@ class Pemesanan extends Model
 {
     use HasFactory;
 
-    protected $table = 'pemesanan';
+    protected $table = 'pemesanans';
     protected $guarded = [''];
-
-    protected function kamar(){
-        return $this->belongsTo(kamar::class);
-    }
 }

@@ -9,6 +9,6 @@ class FasilitasUmum extends Model
 {
     use HasFactory;
 
-    protected $table = 'fasilitas_umum';
+    protected $table = 'fasilitas_umums';
     protected $guarded = [''];
 }

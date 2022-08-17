@@ -9,10 +9,6 @@ class FasilitasKamar extends Model
 {
     use HasFactory;
 
-    protected $table = 'fasilitas_kamar';
+    protected $table = 'fasilitas_kamars';
     protected $guarded = [''];
-
-    protected function kamar(){
-        return $this->belongsTo(kamar::class);
-    }
 }

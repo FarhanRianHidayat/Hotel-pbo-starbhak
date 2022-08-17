@@ -13,13 +13,10 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('kamar', function (Blueprint $table) {
+        Schema::create('fasilitas_umums', function (Blueprint $table) {
             $table->id();
-            $table->string("no_kamar")->unique();
-            $table->string("harga");
-            $table->string("kapasitas");
-            $table->enum('tipe',['Superior','Deluxe']);
-            $table->string('image');
+            $table->string('nama_fasilitas');
+            $table->string('deskripsi');
             $table->timestamps();
         });
     }
@@ -31,6 +28,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('kamar');
+        Schema::dropIfExists('fasilitas_umums');
     }
 };
