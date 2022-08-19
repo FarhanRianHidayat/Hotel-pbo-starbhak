@@ -4,9 +4,9 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AppController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\AdminController;
-use App\Http\Controllers\KamarController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RegisterController;
+use App\Http\Controllers\Api\KamarController;
 use App\Http\Controllers\ResepsionisController;
 use App\Http\Controllers\FasilitasUmumController;
 use App\Http\Controllers\FasilitasKamarController;
@@ -29,12 +29,12 @@ route::get('/fasilitas', [AppController::class, 'fasilitas']);
 
 route::get('/dashboard',[AdminController::class,'index'])->name('dashboard');
 
-route::get('/kamar',[KamarController::class,'index'])->name('kamar');
-route::get('/kamar/create',[KamarController::class,'create']);
-route::post('/kamar',[KamarController::class,'store']);
-route::get('/kamar/{id}/edit',[KamarController::class,'edit']);
-route::post('/kamar/{id}',[KamarController::class,'update']);
-route::get('/kamar/{id}',[KamarController::class,'destroy']);
+// route::get('/kamar',[KamarController::class,'index'])->name('kamar');
+// route::get('/kamar/create',[KamarController::class,'create']);
+// route::post('/kamar',[KamarController::class,'store']);
+// route::get('/kamar/{id}/edit',[KamarController::class,'edit']);
+// route::post('/kamar/{id}',[KamarController::class,'update']);
+// route::get('/kamar/{id}',[KamarController::class,'destroy']);
 
 route::get('/fasilitaskamar',[FasilitasKamarController::class,'index'])->name('fasilitaskamar');
 route::get('/fasilitaskamar/create',[FasilitasKamarController::class,'create']);

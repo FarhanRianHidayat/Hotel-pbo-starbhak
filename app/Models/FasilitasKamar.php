@@ -11,4 +11,8 @@ class FasilitasKamar extends Model
 
     protected $table = 'fasilitas_kamars';
     protected $guarded = [''];
+
+    protected function kategori(){
+        return $this->belongsTo(kategori::class);
+    }
 }
