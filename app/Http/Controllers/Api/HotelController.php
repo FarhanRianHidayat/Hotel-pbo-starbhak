@@ -47,4 +47,33 @@ class HotelController extends Controller
         // return single post as a resource
         return new PostResource(true,'Data Hotel Ditemukan!',$hotel);
     }
+
+        public function update(Request $request, Hotel $hotel){
+        $validator = Validator::make($request->all(), [
+            'nama_hotel' => 'required',
+            'alamat' => 'required',
+        ]);
+
+        if ($validator->fails()){
+            return response()->json($validator->errors(), 422);
+        }
+
+        $hotel->update([
+                'nama_hotel'     => $request->nama_hotel,
+                'alamat'   => $request->alamat,
+            ]);
+        return new PostResource(true, 'Data Hotel Berhasil Diubah!', $hotel);
+    }
+
+        public function destroy(Hotel $hotel)
+    {
+        //delete image
+        // Storage::delete('public/posts/'.$post->image);
+
+        //delete post
+        $hotel->delete();
+
+        //return response
+        return new PostResource(true, 'Data Hotel Berhasil Dihapus!', null);
+    }
 }
