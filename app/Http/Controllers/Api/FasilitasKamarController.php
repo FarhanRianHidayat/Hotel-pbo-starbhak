@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Models\FasilitasKamar;
 use App\Http\Controllers\Controller;
 use App\Http\Resources\PostResource;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Validator;
 
 class FasilitasKamarController extends Controller
@@ -46,5 +47,34 @@ class FasilitasKamarController extends Controller
     public function show(FasilitasKamar $fasilitaskamar){
         // return single post as a resource
         return new PostResource(true,'Data Fasilitas Kamar Ditemukan!',$fasilitaskamar);
+    }
+
+    public function update(Request $request, FasilitasKamar $fasilitaskamar){
+        $validator = Validator::make($request->all(), [
+            'kategori_id' => 'required',
+            'nama_fasilitas' => 'required',
+        ]);
+
+        if ($validator->fails()){
+            return response()->json($validator->errors(), 422);
+        }
+
+        $fasilitaskamar->update([
+                'kategori_id'     => $request->kategori_id,
+                'nama_fasilitas'   => $request->nama_fasilitas,
+            ]);
+        return new PostResource(true, 'Data Fasilitas Kamar Berhasil Diubah!', $fasilitaskamar);
+    }
+
+        public function destroy(FasilitasKamar $fasilitaskamar)
+    {
+        //delete image
+        // Storage::delete('public/posts/'.$post->image);
+
+        //delete post
+        $fasilitaskamar->delete();
+
+        //return response
+        return new PostResource(true, 'Data Fasilitas Kamar Berhasil Dihapus!', null);
     }
 }

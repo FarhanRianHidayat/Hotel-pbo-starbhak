@@ -47,4 +47,33 @@ class KategoriController extends Controller
         // return single post as a resource
         return new PostResource(true,'Data Post Ditemukan!',$kategori);
     }
+
+    public function update(Request $request, Kategori $kategori){
+        $validator = Validator::make($request->all(), [
+            'kategori' => 'required',
+            'hotel_id' => 'required',
+        ]);
+
+        if ($validator->fails()){
+            return response()->json($validator->errors(), 422);
+        }
+
+        $kategori->update([
+                'kategori'     => $request->kategori,
+                'hotel_id'   => $request->hotel_id,
+            ]);
+        return new PostResource(true, 'Data Kategori Berhasil Diubah!', $kategori);
+    }
+
+    public function destroy(Kategori $kategori)
+    {
+        //delete image
+        // Storage::delete('public/posts/'.$post->image);
+
+        //delete post
+        $kategori->delete();
+
+        //return response
+        return new PostResource(true, 'Data Kategori Berhasil Dihapus!', null);
+    }
 }

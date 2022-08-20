@@ -50,4 +50,35 @@ class KamarController extends Controller
         return new PostResource(true,'Data Kamar Ditemukan!',$kamar);
     }
     
+        public function update(Request $request, Kamar $kamar){
+        $validator = Validator::make($request->all(), [
+            'hotel_id' => 'required',
+            'kategori_id' => 'required',
+            'jumlah_kamar' => 'required',
+        ]);
+
+        if ($validator->fails()){
+            return response()->json($validator->errors(), 422);
+        }
+
+        $kamar->update([
+                'hotel_id'     => $request->hotel_id,
+                'kategori_id'   => $request->kategori_id,
+                'jumlah_kamar'   => $request->jumlah_kamar,
+            ]);
+        return new PostResource(true, 'Data Kamar Berhasil Diubah!', $kamar);
+    }
+
+        public function destroy(Kamar $kamar)
+    {
+        //delete image
+        // Storage::delete('public/posts/'.$post->image);
+
+        //delete post
+        $kamar->delete();
+
+        //return response
+        return new PostResource(true, 'Data Kamar Berhasil Dihapus!', null);
+    }
+
 }
