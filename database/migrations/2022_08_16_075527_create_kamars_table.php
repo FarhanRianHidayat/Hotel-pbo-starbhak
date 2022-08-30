@@ -15,9 +15,9 @@ return new class extends Migration
     {
         Schema::create('kamars', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('hotel_id');
             $table->foreignId('kategori_id');
             $table->string('jumlah_kamar');
+            $table->string('harga');
             $table->timestamps();
         });
     }

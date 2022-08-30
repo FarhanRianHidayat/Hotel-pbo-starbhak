@@ -12,7 +12,9 @@ use Illuminate\Support\Facades\Validator;
 class KategoriController extends Controller
 {
     public function index(){
-        $data = Kategori::latest()->paginate(5);
+        $data = Kategori::with('hotel')->get();
+        
+        
         return new PostResource(true,"List Data Kategori",$data);
     }
 

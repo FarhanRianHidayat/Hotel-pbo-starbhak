@@ -2,8 +2,9 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
+use App\Models\Hotel;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class Kategori extends Model
 {
@@ -16,8 +17,9 @@ class Kategori extends Model
     protected function kamar(){
         return $this->hasMany(kamar::class);
     }
-    protected function hotel(){
-        return $this->hasMany(kamar::class);
+
+    public function hotel(){
+        return $this->belongsTo(hotel::class,'hotel_id');
     }
 
     protected function fasilitas_kamar(){

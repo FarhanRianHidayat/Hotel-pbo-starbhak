@@ -12,7 +12,7 @@ use Illuminate\Support\Facades\Validator;
 class HotelController extends Controller
 {
     public function index(){
-        $data = Hotel::latest()->paginate(5);
+        $data = Hotel::latest()->get();
         return new PostResource(true,"List Data Hotel",$data);
     }
 

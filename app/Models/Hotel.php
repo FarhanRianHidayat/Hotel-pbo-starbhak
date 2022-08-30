@@ -2,8 +2,9 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
+use App\Models\Kategori;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class Hotel extends Model
 {
@@ -11,4 +12,8 @@ class Hotel extends Model
 
     protected $table = 'hotels';
     protected $guarded = [''];
+
+    protected function kategori(){
+        return $this->hasMany(Kategori::class);
+    }
 }
